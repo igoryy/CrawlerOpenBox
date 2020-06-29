@@ -15,23 +15,19 @@ class ProdutosService{
         
         rp(options)
         .then(($) => {
-        
           $('.listagem-titulo_descr').each((i, item) => {
            produtos.push($(item).find('a').text());
           })
           
           const array = [...new Set(produtos)];
-        
-         
+
           const testeJson = JSON.parse(JSON.stringify({array}));
           console.log(testeJson);
-        
-        
         })
         .catch((err) => {
             console.log(err);
           });
         }
         
-        }
+    }
 }
