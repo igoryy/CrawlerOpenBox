@@ -1,7 +1,10 @@
-class ProdutosService{
+const rp = require('request-promise');
+const cheerio = require('cheerio');
+
+module.exports = class ProdutosService{
     buscarProdutos(qtd){
 
-        for(i = 0 ; i < qtd ; qtd--){
+        for(var i = 0 ; i < qtd ; qtd--){
         const options = {
           uri: 'https://www.kabum.com.br/cgi-local/site/listagem/openbox.cgi?ordem=4&limite=100&pagina='+
           qtd + '&produto=&categoria=01',

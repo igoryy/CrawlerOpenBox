@@ -1,7 +1,9 @@
-const rp = require('request-promise')
-const cheerio = require('cheerio')
-
-class PaginaService{
+const rp = require('request-promise');
+const cheerio = require('cheerio');
+const Util = require('../utils/Util');
+const produtoSerice = require('./ProdutosService');
+const ProdutosService = require('./ProdutosService');
+module.exports = {
   quantidadePaginas(){
     const uriKabum = {
     uri: 'https://www.kabum.com.br/cgi-local/site/listagem/openbox.cgi?ordem=4&limite=100&pagina='+
@@ -19,12 +21,12 @@ class PaginaService{
         valorHardware.push(select);
       })
       const util = new Util();
-      if(valorHardware[0] =! null){
-        qtdDiasPaginas = util.calcularDiasPaginas(parseInt(valorHardware[0]))
-      }
-        
-      ProdutosService.buscarProdutos(qtdDiasPaginas);
+      if(valorHardware[0]){
+         
+        const produtoSerice = new ProdutosService();      
+        produtoSerice.buscarProdutos(util.calcularDiasPaginas(valorHardware[0]));
+      } 
+    
     });
   }
 }
-
