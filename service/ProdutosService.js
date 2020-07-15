@@ -1,8 +1,10 @@
 const rp = require('request-promise');
 const cheerio = require('cheerio');
-
+const Util = require('../utils/Util');
+const email  = require('../utils/Email')
 module.exports = class ProdutosService{
-    buscarProdutos(qtd){
+   
+  buscarProdutos(qtd){
 
         for(var i = 0 ; i < qtd ; qtd--){
         const options = {
@@ -26,11 +28,18 @@ module.exports = class ProdutosService{
 
           const testeJson = JSON.parse(JSON.stringify({array}));
           console.log(testeJson);
+          
+          email.sendEmail();
+          
+       
         })
+
         .catch((err) => {
             console.log(err);
           });
+
         }
+
         
     }
 }
