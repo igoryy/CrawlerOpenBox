@@ -14,6 +14,7 @@ module.exports = {
     }
     const valorHardware = [];
     const qtdDiasPaginas = 0;
+    
     rp(uriKabum)
     .then(($) => {
       $('select[name=categoria] option:selected').each((i, item) => {
