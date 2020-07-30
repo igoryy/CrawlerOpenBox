@@ -35,7 +35,7 @@ module.exports = class ProdutosService{
         setTimeout(function(){ 
           var arrayProdutos = [];
           produtosSemRepeat.forEach(item => {
-            if(item.indexOf("AM4") > 0){
+            if(item.indexOf("AM4") > 0 || item.indexOf("RTX") > 0 ){
 
               arrayProdutos.push(item);
             }

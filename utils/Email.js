@@ -30,7 +30,9 @@ sendEmail(arrayProdutos) {
         var mailOptions = {
             from: usuario,
             to: listaEmail,
-            cc: 'lucas_nascimento1@hotmail.com' ,
+            cc: 'lucas_nascimento1@hotmail.com ; pedrowr1@hotmail.com; '
+                + ' igor.siviero1@gmail.com ; gabrieloliveiramagalhaes1@hotmail.com; ' 
+                + ' benderwellgamesfoda@gmail.com; darkmaqnos45@hotmail.com',
             subject: 'Produtos Open Box Kabum',
             html:  ` 
             <html>
