@@ -34,8 +34,18 @@ module.exports = class ProdutosService{
         }
         setTimeout(function(){ 
           var arrayProdutos = [];
-          produtosSemRepeat.filter(item => item == 'am4' )
-          Email.sendEmail(produtosSemRepeat) }, 4000);
+          produtosSemRepeat.forEach(item => {
+            if(item.indexOf("AM4") > 0){
+
+              arrayProdutos.push(item);
+            }
+          })
+
+          setTimeout(function(){
+            Email.sendEmail(arrayProdutos)
+
+          },4000)
+           }, 4000);
         
         
        
