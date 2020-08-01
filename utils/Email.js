@@ -10,15 +10,50 @@ sendEmail(arrayProdutos) {
     const usuario = 'openboxgameplay@gmail.com'
     const senha = '@igor100';
     
-    var nomeProduto = "" ;
+    var placaMae = "" ;
+    var placaVideo = "";
+    var waterCooler = "";
+    var cooler = "";
+    var memoria = "";
+    var mouse = "" ;
+    var processador ="";
+    var teclado ="";
+    var headset = "";
 
-    arrayProdutos.forEach(item => {
-        nomeProduto += '<strong>' + item +'</strong>'+ '<br>';
+    arrayProdutos.placamae.forEach(item => {
+        placaMae += '<strong>' + item +'</strong>'+ '<br>';
     })
     
-            
-        console.log(nomeProduto)
-    
+    arrayProdutos.placavideo.forEach(item => {
+        placaVideo += '<strong>' + item +'</strong>'+ '<br>';
+    })
+          
+    arrayProdutos.watercooler.forEach(item => {
+        waterCooler += '<strong>' + item +'</strong>'+ '<br>';
+    })
+
+    arrayProdutos.cooler.forEach(item => {
+        waterCooler += '<strong>' + item +'</strong>'+ '<br>';
+    })
+        
+    arrayProdutos.memoria.forEach(item => {
+        memoria += '<strong>' + item +'</strong>'+ '<br>';
+    })
+
+    arrayProdutos.mouse.forEach(item => {
+        mouse += '<strong>' + item +'</strong>'+ '<br>';
+    })
+    arrayProdutos.processador.forEach(item => {
+        processador += '<strong>' + item +'</strong>'+ '<br>';
+    })
+
+    arrayProdutos.teclado.forEach(item => {
+        teclado += '<strong>' + item +'</strong>'+ '<br>';
+    })
+    arrayProdutos.headset.forEach(item => {
+        headset += '<strong>' + item +'</strong>'+ '<br>';
+    })
+
     var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
@@ -32,7 +67,7 @@ sendEmail(arrayProdutos) {
             to: listaEmail,
             cc: 'lucas_nascimento1@hotmail.com ; pedrowr1@hotmail.com; '
                 + ' igor.siviero1@gmail.com ; gabrieloliveiramagalhaes1@hotmail.com; ' 
-                + ' benderwellgamesfoda@gmail.com; darkmaqnos45@hotmail.com',
+                + ' benderwellgamesfoda@gmail.com',
             subject: 'Produtos Open Box Kabum',
             html:  ` 
             <html>
@@ -64,9 +99,47 @@ sendEmail(arrayProdutos) {
                                                         <tr>
                                                             <td width="260" valign="top">
                                                                 <table border="0" cellpadding="0" cellspacing="0" width="100%">
-                                                                  <div> ` + nomeProduto +  `
+                                                                <h1> Placa Mãe </h1>  
+                                                                <div style="padding: 10px"> ` + placaMae +  `
             
                                                                   </div>
+
+                                                                  <h1> Placa de video </h1>  
+                                                                  <div> ` + placaVideo +  `<br>
+              
+                                                                    </div>
+                                                                    <h1> Water Cooler </h1>  
+                                                                    <div> ` + waterCooler +  `<br>
+                
+                                                                      </div>
+                                                                      <h1> Cooler </h1>  
+                                                                      <div> ` + cooler +  `<br>
+                  
+                                                                        </div>
+                                                                        <h1> Memoria </h1>  
+                                                                        <div> ` + memoria +  `<br>
+                    
+                                                                          </div>
+
+                                                                          <h1> Mouse </h1>  
+                                                                          <div> ` + mouse +  `<br>
+                      
+                                                                            </div>
+                                                                            <h1> Processador </h1>  
+                                                                            <div> ` + processador +  `<br>
+                                                                            
+                        
+                                                                              </div> 
+                                                                              <h1> Teclado </h1>  
+                                                                              <div> ` + teclado +  `<br>
+                          
+                                                                                </div> 
+
+                                                                                <h1> Headset </h1>  
+                                                                                <div> ` + headset +  `<br>
+                            
+                                                                                  </div> 
+
                                                                 </table>
                                                             </td>
                                                         </tr>
