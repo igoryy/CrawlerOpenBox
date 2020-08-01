@@ -23,7 +23,7 @@ module.exports = class ProdutosService{
           
         
         },  function (err,res,body){
-          console.log(request.url);
+          
           if(err) console.log('Erro ' + err);
             var $ = cheerio.load(body);
        

@@ -1,3 +1,8 @@
 const { quantidadePaginas } = require("./service/PaginaService");
-const paginaService = require('./service/PaginaService')
-paginaService.quantidadePaginas();
+const CronJob = require('cron').CronJob
+const job = new CronJob('* */5 * * * *' , () => {
+    paginaService.quantidadePaginas();
+},null, true);
+
+const paginaService = require('./service/PaginaService');
+
