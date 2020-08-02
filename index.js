@@ -1,7 +1,8 @@
 const { quantidadePaginas } = require("./service/PaginaService");
 const CronJob = require('cron').CronJob
 const paginaService = require('./service/PaginaService');
-const job = new CronJob('0 */1 * * *' , () => { 
+console.log("inciiar projeto")
+const job = new CronJob('*/2 * * * *' , () => { 
     var strDate = new Date().getTime();;
 
     console.log(strDate);
@@ -14,8 +15,7 @@ const path = require('path');
 
 const app = express();
 
-// Serve os arquivos estáticos da pasta dist (gerada pelo ng build)
-app.use(express.static(__dirname + '/dist/NOME_DO_SEU_PROJETO'));
+
 
 
 
